@@ -18,7 +18,7 @@ function App() {
       <Button
         text="Ne pas cliquer ICI"
         onButtonClicked={(arg) => {}}
-        style={{ fontSize: "45px" }}
+        style={{ fontSize: "45px" }} // déverse du style
       />
       <Button
         text="Je sais que tu vas quand même cliquer"
