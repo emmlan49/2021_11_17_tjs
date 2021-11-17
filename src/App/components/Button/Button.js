@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 /**
@@ -12,16 +12,30 @@ import style from "./Button.module.css";
  * @returns component render
  */
 const Button = (props) => {
+  const [clicked, setClicked] = useState({
+    state: false,
+    autreValue: "Demo bouton",
+  });
+
   return (
     <button
-      // appel du module CSS via la propriété style
-      className={style.Button}
+      /** 
+      appel du module CSS via la propriété style
+      
+      remarque :
+      condition ternaire : au clic / déclic, on applique le CSS dynamiquement  
+       */
+      className={`${style.Button}${clicked.state ? " " + style.clicked : ""}`}
       style={{
         backgroundColor: props.bgColor,
         color: props.color,
         ...props.style, // style déversé par le parent. en dernière position pour être prioritaire
       }}
       onClick={(evt) => {
+        setClicked({ ...clicked, state: true });
+        setTimeout(() => {
+          setClicked({ ...clicked, state: false });
+        }, 300);
         // évènement géré par le composant, donc pas renvoyé au parent
         props.onButtonClicked();
       }}
