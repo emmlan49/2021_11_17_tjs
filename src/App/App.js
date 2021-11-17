@@ -11,7 +11,7 @@ function App() {
       <Button
         text="Cancel"
         onButtonClicked={(arg) => {
-          console.log("OK");
+          console.log("Clic sur le bouton OK");
         }}
         bgColor="tomato"
       />

@@ -9,7 +9,6 @@ import "./Button.css";
  * @returns component render
  */
 const Button = (props) => {
-  console.log(props);
   return (
     <button
       className="Button"
@@ -24,7 +23,9 @@ const Button = (props) => {
   );
 };
 
-//prototype attendu
+/**
+ * prototype attendu
+ */
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   onButtonClicked: PropTypes.func.isRequired,
@@ -32,9 +33,12 @@ Button.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-// valeurs par défaut
+/**
+ * valeurs par défaut du props
+ */
 Button.defaultProps = {
   bgColor: "yellowgreen",
   color: "white",
 };
+
 export default Button;
