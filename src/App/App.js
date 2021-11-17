@@ -15,7 +15,11 @@ function App() {
         }}
         bgColor="tomato"
       />
-      <Button text="Ne pas cliquer ICI" onButtonClicked={(arg) => {}} />
+      <Button
+        text="Ne pas cliquer ICI"
+        onButtonClicked={(arg) => {}}
+        style={{ fontSize: "45px" }}
+      />
       <Button
         text="Je sais que tu vas quand même cliquer"
         onButtonClicked={(arg) => {}}

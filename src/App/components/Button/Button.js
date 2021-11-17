@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./Button.css";
+/**
+ * import de style pour gérer les concurrences des CSS (donc évite la collision des classes)
+ */
+import style from "./Button.module.css";
 
 /**
  * Composant Button HTML
@@ -11,8 +14,13 @@ import "./Button.css";
 const Button = (props) => {
   return (
     <button
-      className="Button"
-      style={{ backgroundColor: props.bgColor, color: props.color }}
+      // appel du module CSS via la propriété style
+      className={style.Button}
+      style={{
+        backgroundColor: props.bgColor,
+        color: props.color,
+        ...props.style, // style déversé par le parent. en dernière position pour être prioritaire
+      }}
       onClick={(evt) => {
         // évènement géré par le composant, donc pas renvoyé au parent
         props.onButtonClicked();
@@ -31,6 +39,7 @@ Button.propTypes = {
   onButtonClicked: PropTypes.func.isRequired,
   bgColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
+  style: PropTypes.object,
 };
 
 /**
