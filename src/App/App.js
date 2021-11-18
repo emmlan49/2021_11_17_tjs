@@ -34,8 +34,8 @@ class App extends React.Component {
               meme={{
                 titre: "mon premie même",
                 text: "Arrête de tricher",
-                x: 50,
-                y: 200,
+                x: 380,
+                y: 500,
                 fontSize: 18,
                 color: "tomato",
                 fontWeight: "200",
