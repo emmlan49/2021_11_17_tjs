@@ -1,29 +1,12 @@
 import React from "react";
+
 import Flexlayout from "./components/Flexlayout/Flexlayout";
 import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
+import Navbar from "./components/Navbar/Navbar";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0, value2: 0 };
-  }
-
-  /**
-   * fonction appelée après le dernier rendu du composant
-   */
-  componentDidUpdate() {
-    //console.log(arguments); // affiche les arguments reçus en paramètre
-
-    // Bonus : avec style dans la console
-    console.log(
-      "%c%s",
-      "font-size:42px;color:red;",
-      "le changement est prêt et effectif : " + this.state.counter
-    ); // affiche les arguments reçus
-  }
-
   render() {
     return (
       <>
@@ -32,13 +15,13 @@ class App extends React.Component {
           <Flexlayout>
             <MemeViewer
               meme={{
-                titre: "mon premie même",
-                text: "Arrête de tricher",
+                titre: "mon premier meme",
+                text: "Hello",
                 x: 380,
                 y: 500,
                 fontSize: 18,
-                color: "tomato",
-                fontWeight: "200",
+                color: "black",
+                fontWeight: "900",
                 underline: true,
                 italic: true,
                 frameX: 0,
@@ -54,6 +37,7 @@ class App extends React.Component {
             />
             <MemeForm />
           </Flexlayout>
+          <Navbar />
         </div>
       </>
     );
