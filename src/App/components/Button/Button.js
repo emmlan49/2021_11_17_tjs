@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 /**
@@ -17,6 +17,25 @@ const Button = (props) => {
     autreValue: "Demo bouton",
   });
 
+  useEffect(() => {
+    console.log(clicked);
+
+    // si le bouton est déjà à l'état initial, on ne modifie pas l'état
+    if (!clicked.state) {
+      return;
+    }
+
+    // remet le champ à l'état initial
+    setTimeout(() => {
+      setClicked({ ...clicked, state: false });
+    }, 500);
+
+    // retourne la fonction de "willunmount"
+    // return () => {
+    //   cleanup
+    // }
+  }, [clicked]);
+
   return (
     <button
       /** 
@@ -33,9 +52,6 @@ const Button = (props) => {
       }}
       onClick={(evt) => {
         setClicked({ ...clicked, state: true });
-        setTimeout(() => {
-          setClicked({ ...clicked, state: false });
-        }, 300);
         // évènement géré par le composant, donc pas renvoyé au parent
         props.onButtonClicked();
       }}
