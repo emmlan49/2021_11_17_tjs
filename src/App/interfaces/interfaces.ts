@@ -1,5 +1,6 @@
 export interface I_Meme{
     id?:number,
+    imageId:number,
     titre: string,
     text: string,
     x:number,

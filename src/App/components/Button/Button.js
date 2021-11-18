@@ -18,8 +18,6 @@ const Button = (props) => {
   });
 
   useEffect(() => {
-    console.log(clicked);
-
     // si le bouton est déjà à l'état initial, on ne modifie pas l'état
     if (!clicked.state) {
       return;
@@ -50,6 +48,7 @@ const Button = (props) => {
         color: props.color,
         ...props.style, // style déversé par le parent. en dernière position pour être prioritaire
       }}
+      type={props.type}
       onClick={(evt) => {
         setClicked({ ...clicked, state: true });
         // évènement géré par le composant, donc pas renvoyé au parent
@@ -70,6 +69,7 @@ Button.propTypes = {
   bgColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   style: PropTypes.object,
+  type: PropTypes.string,
 };
 
 /**

@@ -1,0 +1,39 @@
+{
+  "memes": [
+    {
+      "imageId": 0,
+      "titre": "mon premier meme",
+      "text": "Hello",
+      "x": 380,
+      "y": 500,
+      "fontSize": 18,
+      "color": "#000000",
+      "fontWeight": "900",
+      "underline": true,
+      "italic": true
+    }
+  ],
+  "images": [
+    {
+      "id": 0,
+      "url": "img/meme_1.jpg",
+      "titre": "meme_1",
+      "h": 778,
+      "w": 736
+    },
+    {
+      "id": 1,
+      "url": "img/meme_2.jpg",
+      "titre": "meme_2",
+      "h": 185,
+      "w": 250
+    },
+    {
+      "url": "img/meme_3.jpg",
+      "titre": "meme_3",
+      "h": 778,
+      "w": 736,
+      "id": 2
+    }
+  ]
+}

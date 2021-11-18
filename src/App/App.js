@@ -7,6 +7,41 @@ import MemeViewer from "./components/MemeViewer/MemeViewer";
 import Navbar from "./components/Navbar/Navbar";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      current: {
+        imageId: 0,
+        titre: "mon premier meme",
+        text: "Hello",
+        x: 380,
+        y: 500,
+        fontSize: 18,
+        color: "#000000",
+        fontWeight: "900",
+        underline: true,
+        italic: true,
+      },
+      images: [
+        {
+          id: 0,
+          url: "img/meme_1.jpg",
+          titre: "meme_1",
+          h: 778,
+          w: 736,
+        },
+        {
+          id: 1,
+          url: "img/meme_2.jpg",
+          titre: "meme_2",
+          h: 185,
+          w: 250,
+        },
+      ],
+    };
+  }
+
   render() {
     return (
       <>
@@ -14,28 +49,18 @@ class App extends React.Component {
         <div className="App">
           <Flexlayout>
             <MemeViewer
-              meme={{
-                titre: "mon premier meme",
-                text: "Hello",
-                x: 380,
-                y: 500,
-                fontSize: 18,
-                color: "black",
-                fontWeight: "900",
-                underline: true,
-                italic: true,
-                frameX: 0,
-                frameY: 0,
-              }}
-              image={{
-                id: 0,
-                url: "img/meme_1.jpg",
-                titre: "meme_1",
-                h: 778,
-                w: 736,
-              }}
+              meme={this.state.current}
+              image={this.state.images.find(
+                (e) => e.id === this.state.current.imageId
+              )}
             />
-            <MemeForm />
+            <MemeForm
+              meme={this.state.current}
+              onMemeChange={(meme) => {
+                this.setState({ current: meme });
+              }}
+              images={this.state.images}
+            />
           </Flexlayout>
           <Navbar />
         </div>

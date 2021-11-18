@@ -9,8 +9,6 @@ interface I_Props{
 }
 
 const MemeViewer: React.FC<I_Props> = (props) => {
-  console.log(props);
-
   return(
     <svg
       className={styles.MemeViewer}
