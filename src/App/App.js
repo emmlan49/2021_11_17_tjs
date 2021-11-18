@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./components/Button/Button";
+import MemeViewer from "./components/MemeViewer/MemeViewer";
 
 class App extends React.Component {
   constructor(props) {
@@ -24,23 +24,27 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        counter : {this.state.counter}
-        <br />
-        <Button
-          text="Soustraire"
-          onButtonClicked={() => {
-            this.setState({ counter: this.state.counter - 1 });
-            console.log(this.state);
+        <MemeViewer
+          meme={{
+            titre: "mon premie même",
+            text: "Arrête de tricher",
+            x: 50,
+            y: 200,
+            fontSize: 18,
+            color: "tomato",
+            fontWeight: "200",
+            underline: true,
+            italic: true,
+            frameX: 0,
+            frameY: 0,
           }}
-          bgColor="tomato"
-        />
-        <Button
-          text="Ajouter"
-          onButtonClicked={() => {
-            this.setState({ counter: this.state.counter + 1 });
-            console.log(this.state);
+          image={{
+            id: 0,
+            url: "img/meme_1.jpg",
+            titre: "meme_1",
+            h: 778,
+            w: 736,
           }}
-          bgColor="green"
         />
       </div>
     );
