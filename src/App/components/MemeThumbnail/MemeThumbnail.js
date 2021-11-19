@@ -14,7 +14,6 @@ const MemeThumbnail = (props) => {
           <MemeViewer
             meme={e}
             image={props.images.find((img) => img.id === e.imageId)}
-            key={i} // METTRE l'ID
           />
         ))}
       </FlowLayout>
