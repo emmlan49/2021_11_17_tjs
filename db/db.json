@@ -1,6 +1,7 @@
 {
   "memes": [
     {
+      "id":1,
       "imageId": 0,
       "titre": "mon premier meme",
       "text": "Hello",
@@ -13,6 +14,7 @@
       "italic": true
     },
     {
+      "id":2,
       "imageId": 1,
       "titre": "mon deuxième meme",
       "text": "Hello 2",
@@ -25,6 +27,7 @@
       "italic": true
     },
     {
+      "id":3,
       "imageId": 0,
       "titre": "mon premier meme",
       "text": "Hello",
@@ -37,6 +40,7 @@
       "italic": true
     },
     {
+      "id":4,
       "imageId": 1,
       "titre": "mon deuxième meme",
       "text": "Hello 2",

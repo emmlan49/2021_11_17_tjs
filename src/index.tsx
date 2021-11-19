@@ -6,13 +6,17 @@ import './index.css';
 
 import App from './App/App';
 import store  from "./App/store/store";
+import { BrowserRouter as Router} from 'react-router-dom'
 
 //import reportWebVitals from './reportWebVitals';
+// formateur : 06 64 27 63 60
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+      <Router >
+      <App />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

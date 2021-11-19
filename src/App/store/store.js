@@ -18,7 +18,7 @@ const ressourceInitialState = {
 };
 
 function ressourceReducer(state = ressourceInitialState, action) {
-  console.log("ressourceReducer", action);
+  // console.log("ressourceReducer", action);
 
   switch (action.type) {
     case INIT_ACTIONS.INIT:
@@ -71,7 +71,7 @@ export const CURRENT_PUBLIC_ACTIONS = Object.freeze({
 });
 
 const currentReducer = (state = currentInitialState, action) => {
-  console.log("currentReducer", action);
+  //console.log("currentReducer", action);
 
   switch (action.type) {
     case INIT_ACTIONS.INIT:
@@ -99,7 +99,7 @@ const store = createStore(
 );
 
 store.subscribe(() => {
-  console.log("store", store.getState());
+  //console.log("store", store.getState());
 });
 
 // initialisation du store
