@@ -31,12 +31,4 @@ const MemeViewer: React.FC<I_Props> = (props) => {
     </svg>
 )};
 
-// remplacé par l'interface
-// MemeViewer.propTypes = {
-//   meme: PropTypes.object.isRequired,
-//   image: PropTypes.object,
-// };
-
-// MemeViewer.defaultProps = {};
-
 export default MemeViewer;

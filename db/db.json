@@ -11,6 +11,42 @@
       "fontWeight": "900",
       "underline": true,
       "italic": true
+    },
+    {
+      "imageId": 1,
+      "titre": "mon deuxième meme",
+      "text": "Hello 2",
+      "x": 160,
+      "y": 80,
+      "fontSize": 18,
+      "color": "#000000",
+      "fontWeight": "900",
+      "underline": true,
+      "italic": true
+    },
+    {
+      "imageId": 0,
+      "titre": "mon premier meme",
+      "text": "Hello",
+      "x": 380,
+      "y": 500,
+      "fontSize": 18,
+      "color": "#000000",
+      "fontWeight": "900",
+      "underline": true,
+      "italic": true
+    },
+    {
+      "imageId": 1,
+      "titre": "mon deuxième meme",
+      "text": "Hello 2",
+      "x": 160,
+      "y": 80,
+      "fontSize": 18,
+      "color": "#000000",
+      "fontWeight": "900",
+      "underline": true,
+      "italic": true
     }
   ],
   "images": [
@@ -25,8 +61,8 @@
       "id": 1,
       "url": "img/meme_2.jpg",
       "titre": "meme_2",
-      "h": 185,
-      "w": 250
+      "h": 250,
+      "w": 185
     }
   ]
 }

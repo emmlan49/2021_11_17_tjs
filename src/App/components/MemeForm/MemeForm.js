@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
+
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import styles from "./MemeForm.module.scss";
-
-const initialState = {};
+import { CURRENT_PUBLIC_ACTIONS } from "../../store/store";
 
 function MemeForm(props) {
-  const [state, setState] = useState(initialState);
-
-  useEffect(() => {
-    // didMount + didUpdate
-    return () => {
-      //willUnmount
-    };
-  }, [state]);
-
   return (
     <div data-testid="MemeForm" className={styles.MemeForm}>
       <form>
@@ -199,4 +191,22 @@ MemeForm.propTypes = {
   onMemeChange: PropTypes.func.isRequired,
 };
 
-export default MemeForm;
+// on ajoute aux props les infos du store
+// mapping champs
+function mapStateToProps(state, own) {
+  return {
+    ...own,
+    meme: state.current,
+    images: state.ressources.images,
+  };
+}
+
+// dispatch
+function mapDispatchToProps(dispatch) {
+  return {
+    // on ajoute la fonction de "onMemeChange" qui rappelle le dispatch
+    onMemeChange: (meme) =>
+      dispatch({ type: CURRENT_PUBLIC_ACTIONS.UPDATE_CURRENT, value: meme }),
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(MemeForm);
