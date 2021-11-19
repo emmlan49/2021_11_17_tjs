@@ -5,7 +5,9 @@ import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 import Navbar from "./components/Navbar/Navbar";
+import { REST_ADR, REST_RESSOURCE } from "./config/config.";
 
+import { store } from "./store/store";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,23 +25,14 @@ class App extends React.Component {
         underline: true,
         italic: true,
       },
-      images: [
-        {
-          id: 0,
-          url: "img/meme_1.jpg",
-          titre: "meme_1",
-          h: 778,
-          w: 736,
-        },
-        {
-          id: 1,
-          url: "img/meme_2.jpg",
-          titre: "meme_2",
-          h: 185,
-          w: 250,
-        },
-      ],
+      images: [],
     };
+  }
+
+  componentDidMount() {
+    fetch(`${REST_ADR}${REST_RESSOURCE.images}`)
+      .then((f) => f.json())
+      .then((arr) => this.setState({ images: arr }));
   }
 
   render() {
